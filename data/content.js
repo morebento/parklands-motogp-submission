@@ -8,7 +8,7 @@
  */
 window.CONTENT = {
   meta: {
-    siteName: "Have Your Say — Victoria Park",
+    siteName: "Stop the Chop — Victoria Park — Submission Generator",
     tagline: "Write your own submission on the MotoGP circuit proposal",
     deadlineISO: "2026-09-20T23:59:00+09:30",
     deadlineDisplayShort: "11:59pm, Sun 20 Sept 2026",
