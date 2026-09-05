@@ -24,7 +24,7 @@ window.CONTENT = {
 
   // Key facts shown up front on the landing screen (§4 step 1).
   headlineFacts: [
-    { stat: "Up to 400 trees", detail: "removed from National Heritage-listed Park Lands" },
+    { stat: "Up to 400 trees", detail: "removed from the iconic Adelaide Parklands" },
     { stat: "$96 million+", detail: "in public money for construction alone" },
     { stat: "Permanent change", detail: "under an initial six-year contract, with no guarantee it stops there" },
   ],
