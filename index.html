@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Have Your Say — Victoria Park</title>
+  <meta
+    name="description"
+    content="An independent, community-built tool to help you write your own submission on the proposed MotoGP circuit redevelopment in Victoria Park/Pakapakanthi."
+  />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <span class="site-header__name">Have Your Say — Victoria Park</span>
+      <span class="site-header__countdown" id="header-countdown" aria-live="polite"></span>
+    </div>
+  </header>
+
+  <noscript>
+    <div class="noscript-banner">
+      This tool needs JavaScript to build your submission. Please enable JavaScript in your
+      browser, or write your submission directly to
+      <a href="mailto:circuitredevelopment@sa.gov.au">circuitredevelopment@sa.gov.au</a> or via the
+      <a href="https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback"
+        >Government's official feedback survey</a
+      >.
+    </div>
+  </noscript>
+
+  <main id="main-content" tabindex="-1">
+    <!-- STEP 0: LANDING -->
+    <section class="step" id="step-0" data-step="0">
+      <div class="panel panel--landing">
+        <p class="disclaimer">
+          <strong>Independent community tool.</strong> Not affiliated with the SA Government,
+          the Department for Infrastructure and Transport, or the Adelaide Park Lands
+          Association. It only helps you write your own submission — it never sends anything on
+          your behalf.
+        </p>
+
+        <h1>Write your own submission on the MotoGP circuit proposal</h1>
+        <p class="lede">
+          The SA Government is inviting feedback on a plan to permanently redevelop Victoria
+          Park/Pakapakanthi for MotoGP. This tool helps you turn your own concerns into a clear,
+          personal submission in a few minutes — then hands you off to the official channels to
+          send it yourself.
+        </p>
+
+        <p class="countdown-big" id="landing-countdown" aria-live="polite"></p>
+        <p class="deadline-note">Consultation closes 11:59pm, Sunday 20 September 2026 (Adelaide time).</p>
+
+        <ul class="fact-strip" id="fact-strip"></ul>
+
+        <button type="button" class="btn btn--primary btn--large" data-action="start">
+          Start my submission
+        </button>
+
+        <p class="privacy-note">
+          Nothing you type here is sent to a server, logged, or stored anywhere outside this
+          browser tab. See “Your privacy” in the footer for details.
+        </p>
+      </div>
+    </section>
+
+    <!-- Shared wizard chrome -->
+    <div class="wizard" id="wizard" hidden>
+      <ol class="progress" id="progress" aria-label="Submission steps"></ol>
+
+      <div class="wizard__body">
+        <div class="wizard__form">
+          <!-- STEP 1 -->
+          <section class="step" id="step-1" data-step="1">
+            <h2>Your connection to the Park Lands</h2>
+            <p class="hint">Optional — this helps personalise your opening paragraph.</p>
+            <fieldset class="chip-group">
+              <legend>Which of these apply to you?</legend>
+              <div class="chips" id="connection-chips"></div>
+            </fieldset>
+            <label class="field" for="connection-text">
+              Tell us a bit more in your own words (optional)
+              <textarea
+                id="connection-text"
+                rows="3"
+                placeholder="E.g. I've lived two streets from the park for 15 years and walk my dog there every day."
+              ></textarea>
+            </label>
+          </section>
+
+          <!-- STEP 2 -->
+          <section class="step" id="step-2" data-step="2">
+            <h2>Choose your concerns</h2>
+            <p class="hint">
+              Nothing is pre-selected. You don't have to use every point — pick what matters to
+              you and say it your way. Personal, specific submissions carry more weight than a
+              form letter.
+            </p>
+            <div id="concern-categories"></div>
+          </section>
+
+          <!-- STEP 3 -->
+          <section class="step" id="step-3" data-step="3">
+            <h2>What do you want the Government to do?</h2>
+            <p class="hint">Choose at least one — this becomes your letter's closing paragraph.</p>
+            <fieldset class="checkbox-group" id="asks-group">
+              <legend>I am asking the Government to:</legend>
+              <div id="asks-list"></div>
+            </fieldset>
+            <p class="field-error" id="step-3-error" role="alert" hidden></p>
+          </section>
+
+          <!-- STEP 4 -->
+          <section class="step" id="step-4" data-step="4">
+            <h2>Your particulars</h2>
+            <p class="hint">Formal submissions carry more weight with a name and address attached.</p>
+
+            <label class="field" for="p-name">
+              Full name <span class="required">(required)</span>
+              <input type="text" id="p-name" autocomplete="name" required />
+            </label>
+
+            <div class="field-row">
+              <label class="field" for="p-suburb">
+                Suburb <span class="required">(required)</span>
+                <input type="text" id="p-suburb" autocomplete="address-level2" required />
+              </label>
+              <label class="field" for="p-postcode">
+                Postcode <span class="required">(required)</span>
+                <input
+                  type="text"
+                  id="p-postcode"
+                  inputmode="numeric"
+                  pattern="[0-9]{4}"
+                  maxlength="4"
+                  autocomplete="postal-code"
+                  required
+                />
+              </label>
+            </div>
+
+            <details class="collapsible">
+              <summary>Add full street address (optional)</summary>
+              <p class="hint">
+                Including a street address is traditional for formal submissions, but not
+                necessary.
+              </p>
+              <label class="field" for="p-address">
+                Street address
+                <input type="text" id="p-address" autocomplete="street-address" />
+              </label>
+            </details>
+
+            <label class="field" for="p-email">
+              Email address (optional)
+              <input type="email" id="p-email" autocomplete="email" />
+              <span class="field-note"
+                >Only used to pre-fill your email app's "from" field — never transmitted anywhere
+                by this site.</span
+              >
+            </label>
+
+            <p class="field-error" id="step-4-error" role="alert" hidden></p>
+          </section>
+
+          <!-- STEP 5 -->
+          <section class="step" id="step-5" data-step="5">
+            <h2>Review &amp; personalise</h2>
+            <p class="hint">
+              Edit this freely — it's your submission. Once you start editing, your earlier
+              choices won't overwrite your changes.
+            </p>
+            <label class="field" for="letter-preview">
+              Your submission
+              <textarea id="letter-preview" rows="18"></textarea>
+            </label>
+          </section>
+
+          <!-- STEP 6 -->
+          <section class="step" id="step-6" data-step="6">
+            <h2>Send it</h2>
+            <p class="hint">
+              This tool doesn't send anything for you. Use one of the options below to send your
+              submission through an official channel.
+            </p>
+
+            <div class="send-actions">
+              <button type="button" class="btn btn--primary" data-action="open-email">
+                Open in your email app
+              </button>
+              <button type="button" class="btn" data-action="copy-text">Copy submission text</button>
+              <button type="button" class="btn" data-action="download-pdf">Download as PDF</button>
+              <button type="button" class="btn" data-action="download-txt">Download as text file</button>
+            </div>
+            <p class="action-status" id="action-status" role="status" aria-live="polite"></p>
+            <p class="mailto-fallback-note" id="mailto-fallback-note" hidden>
+              Your submission is long, so we've copied it to your clipboard and opened a short
+              email — just paste before sending.
+            </p>
+
+            <label class="apla-cc">
+              <input type="checkbox" id="apla-cc-checkbox" />
+              Also send a copy to the Adelaide Park Lands Association
+            </label>
+            <p class="hint">
+              APLA is a community group (unaffiliated with government) that keeps its own count
+              of submissions to check the Government's later claims about how the community
+              responded. This is optional and not part of the official process.
+            </p>
+
+            <hr class="divider" />
+
+            <p>
+              <strong>Ready to lodge it?</strong> This is a separate step — this tool cannot
+              submit anything for you.
+            </p>
+            <a
+              class="btn btn--official"
+              id="official-survey-link"
+              href="https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to the Government's official feedback survey
+            </a>
+            <p class="hint">
+              The survey's final question accepts a document upload — you can attach your
+              downloaded PDF there instead of typing into the form.
+            </p>
+          </section>
+        </div>
+
+        <aside class="wizard__preview" aria-label="Live preview of your submission">
+          <h2>Live preview</h2>
+          <pre id="live-preview" class="live-preview"></pre>
+        </aside>
+      </div>
+
+      <nav class="wizard__nav">
+        <button type="button" class="btn" data-action="back" id="btn-back">Back</button>
+        <button type="button" class="btn btn--primary" data-action="next" id="btn-next">Next</button>
+      </nav>
+    </div>
+
+    <!-- CONFIRMATION FOOTER STEP -->
+    <section class="step" id="step-done" data-step="done" hidden>
+      <div class="panel">
+        <h2>Nothing has been sent yet</h2>
+        <p>
+          This tool never sends or stores anything itself. Make sure you've actually sent your
+          email or submitted the Government's survey before the deadline:
+        </p>
+        <p class="deadline-note-strong">11:59pm, Sunday 20 September 2026 (Adelaide time).</p>
+        <p>
+          Want to read more before you finish? The Adelaide Park Lands Association publishes
+          detailed background and guides — search for "Adelaide Park Lands Association" for their
+          latest resources, or email them at
+          <a href="mailto:adelparklands@outlook.com">adelparklands@outlook.com</a>.
+        </p>
+        <button type="button" class="btn" data-action="restart">Start a new submission</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <details class="collapsible">
+      <summary>Your privacy</summary>
+      <p>
+        Nothing you type into this tool is ever sent to a server, logged, or stored outside your
+        own browser tab. There is no backend and no database — this is a static page that runs
+        entirely on your device. No cookies are used. Refreshing or closing this tab clears
+        everything you've entered.
+      </p>
+    </details>
+    <details class="collapsible">
+      <summary>About this tool</summary>
+      <p>
+        This is an independent, community-built tool. It is not affiliated with the SA
+        Government, the Department for Infrastructure and Transport, or the Adelaide Park Lands
+        Association. It exists only to help you compose your own submission — it does not collect
+        feedback on anyone's behalf.
+      </p>
+    </details>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="data/content.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/letter.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/mailto.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
