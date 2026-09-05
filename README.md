@@ -1,14 +1,13 @@
-# Stop the Chop — Victoria Park — Submission Generator
+# Victoria Park MotoGP Submission Builder
 
 An independent, community-built tool that helps Adelaide residents write and lodge a personal
 submission on the proposed MotoGP circuit redevelopment in Victoria Park/Pakapakanthi, as part of
 the SA Government's public consultation closing **11:59pm, Sunday 20 September 2026**.
 
 This is **not** affiliated with the SA Government, the Department for Infrastructure and
-Transport, the Adelaide Park Lands Association, or the organisers of the "Stop the Chop"
-petition. It only helps a visitor compose their own submission — it never collects, stores, or
-sends anything on their behalf. See `motogp-submission-tool-spec.md` for the full build spec this
-implementation follows.
+Transport, or the Adelaide Park Lands Association. It only helps a visitor compose their own
+submission — it never collects, stores, or sends anything on their behalf. See
+`motogp-submission-tool-spec.md` for the full build spec this implementation follows.
 
 ## Architecture
 
