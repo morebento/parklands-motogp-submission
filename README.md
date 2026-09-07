@@ -5,7 +5,7 @@ submission on the proposed MotoGP circuit redevelopment in Victoria Park/Pakapak
 the SA Government's public consultation closing **11:59pm, Sunday 20 September 2026**.
 
 This is **not** affiliated with the SA Government, the Department for Infrastructure and
-Transport, or the Adelaide Park Lands Association. It only helps a visitor compose their own
+Transport, or the Adelaide Parklands Association. It only helps a visitor compose their own
 submission — it never collects, stores, or sends anything on their behalf. See
 `motogp-submission-tool-spec.md` for the full build spec this implementation follows.
 
