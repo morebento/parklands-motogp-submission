@@ -35,6 +35,10 @@
     return sentence;
   }
 
+  function buildPersonalStatementParagraph(state) {
+    return state.personalStatement.trim();
+  }
+
   function buildConcernSections(state) {
     const sections = [];
     CONTENT.categories.forEach((category) => {
@@ -83,6 +87,12 @@
     if (personal) {
       parts.push("");
       parts.push(personal);
+    }
+
+    const statement = buildPersonalStatementParagraph(state);
+    if (statement) {
+      parts.push("");
+      parts.push(statement);
     }
 
     const sections = buildConcernSections(state);

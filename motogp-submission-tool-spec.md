@@ -58,20 +58,21 @@ Lower the barrier to making a genuine, personal, well-informed submission before
 1. **Landing** — one-screen explanation: what this is, the deadline (with a live countdown), and that it's an independent community tool, with the two facts that matter most (400 trees / $96m+ / permanent change) stated up front.
 2. **Step 1 – Your connection to the Park Lands** (optional, short free text + a few chips like *resident*, *parent*, *sports club member*, *regular park user*, *ratepayer*, *visitor to Adelaide*) — feeds the "why this matters to me" paragraph.
 3. **Step 2 – Choose your concerns** — checklist grouped by theme (§6). Multi-select, nothing pre-ticked (so the final letter reflects genuine choices, not a default wall of text). A running live preview updates as boxes are ticked.
-4. **Step 3 – What do you want the Government to do?** — pick one or more closing "asks" (§6.7). At least one required before the letter is considered complete.
-5. **Step 4 – Your particulars**:
+4. **Step 3 – Say it in your own words** — a single prompted free-text field for a specific personal reason or experience ("a place you use, a moment, what changes for you or your family"). Actively encouraged rather than labelled merely "optional", shown with concrete example sentences. Not gated — skipping it produces a letter with no empty paragraph. If three or more concerns are ticked and this is blank, a non-blocking nudge appears. Rendered verbatim as its own paragraph, positioned after the connection paragraph and before the first concern heading (§6.8).
+5. **Step 4 – What do you want the Government to do?** — pick one or more closing "asks" (§6.7). At least one required before the letter is considered complete.
+6. **Step 5 – Your particulars**:
    - Full name (required)
    - Suburb & postcode (required)
    - Full street address (optional, collapsed by default with a note that including it is traditional for formal submissions but not necessary)
    - Email address (optional — only used to pre-fill the "from" expectations in the email client, never transmitted anywhere by the site)
-6. **Step 5 – Review & personalise** — full editable text preview of the assembled submission (see §6.8). User can freely edit the generated text before sending; edits are not synced back to the checkboxes.
-7. **Step 6 – Send it**:
+7. **Step 6 – Review & personalise** — full editable text preview of the assembled submission (see §6.8). User can freely edit the generated text before sending; edits are not synced back to the checkboxes.
+8. **Step 7 – Send it**:
    - **Primary: "Open in your email app"** → launches a `mailto:` draft addressed to `circuitredevelopment@sa.gov.au` (see §7.3 for the length-limit handling).
    - **"Copy submission text"** → copies the full letter to the clipboard, for pasting into any email client or the government survey's text fields.
    - **"Download as PDF"** and **"Download as text file"** → for attaching to an email manually, or uploading at the final question of the government survey.
    - Optional checkbox, unticked by default: **"Also send a copy to the Adelaide Park Lands Association"** — adds `adelparklands@outlook.com` as a cc on the mailto link, with a one-line explanation of who they are and why (community group, keeps their own count, unaffiliated with government).
    - A clearly separate button/link: **"Go to the Government's official feedback survey"** → opens `https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback` in a new tab, with a reminder that the downloaded PDF can be attached at the survey's final question.
-8. **Confirmation footer** — reminder that nothing was sent by the tool itself, a reminder of the deadline, and a link back to APLA's own resources for people who want to read more before finishing.
+9. **Confirmation footer** — reminder that nothing was sent by the tool itself, a reminder of the deadline, and a link back to APLA's own resources for people who want to read more before finishing.
 
 ## 5. Tone & content guidance
 
@@ -131,10 +132,11 @@ Implement this as a data file (e.g. `concerns.json`) the UI renders from, so wor
 2. Subject line: `Submission on proposed MotoGP circuit redevelopment — Victoria Park/Pakapakanthi`.
 3. Opening line stating this is a submission on the proposed MotoGP circuit redevelopment consultation, closing 20 September 2026.
 4. Personal-connection paragraph (from Step 1's chips/free text, if provided).
-5. One paragraph per ticked concern, grouped by category with a short heading per category (only categories with at least one ticked item appear).
-6. Closing paragraph built from the ticked "asks" (§6.7).
-7. Sign-off: `Yours sincerely,` then name, then suburb/postcode (and full address if supplied).
-8. If the reader is unsure of a fact, avoid absolute claims not covered by §1 — better to under-claim than to overstate.
+5. The submitter's own words (Step 3), verbatim as a single paragraph, if provided.
+6. One paragraph per ticked concern, grouped by category with a short heading per category (only categories with at least one ticked item appear).
+7. Closing paragraph built from the ticked "asks" (§6.7).
+8. Sign-off: `Yours sincerely,` then name, then suburb/postcode (and full address if supplied).
+9. If the reader is unsure of a fact, avoid absolute claims not covered by §1 — better to under-claim than to overstate.
 
 ## 7. Technical requirements
 
@@ -171,7 +173,8 @@ Implement this as a data file (e.g. `concerns.json`) the UI renders from, so wor
 
 - [ ] A visitor with no prior knowledge of the issue can produce a coherent, factually accurate, first-person submission in under 5 minutes.
 - [ ] No concern or ask is pre-selected; the letter is empty of substantive content until the visitor makes choices.
-- [ ] The live preview always matches the current checkbox/field state until the visitor manually edits it in Step 5, after which manual edits are preserved and not overwritten.
+- [ ] The live preview always matches the current checkbox/field state until the visitor manually edits it in Step 6, after which manual edits are preserved and not overwritten.
+- [ ] The "in your own words" prompt (Step 3) is encouraged rather than labelled merely "optional"; skipping it never leaves an empty paragraph or placeholder in the letter; when filled it appears verbatim as its own paragraph after the connection paragraph and before the first concern heading, in the preview and all four outputs.
 - [ ] "Open in email app," "copy text," "download PDF," and "download text" all work from the same generated letter.
 - [ ] The official DIT survey link and the `circuitredevelopment@sa.gov.au` address are correct and clearly presented as the two official channels, distinct from this tool.
 - [ ] No personal data (name, address, email, selections) leaves the browser at any point; this is stated plainly on the page.
