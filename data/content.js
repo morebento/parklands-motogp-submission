@@ -63,7 +63,7 @@ window.CONTENT = {
     { id: "resident", label: "Resident", fragment: "a resident living near the Parklands" },
     { id: "parent", label: "Parent", fragment: "a parent of children who use the Parklands" },
     { id: "sports-club", label: "Sports club member", fragment: "a member of a sports club that uses the Parklands" },
-    { id: "regular-user", label: "Regular park user", fragment: "someone who regularly uses the Parklands" },
+    { id: "regular-user", label: "Regular Parklands user", fragment: "someone who regularly uses the Parklands" },
     { id: "ratepayer", label: "Ratepayer", fragment: "an Adelaide ratepayer" },
     { id: "visitor", label: "Visitor to Adelaide", fragment: "a visitor to Adelaide who values the Parklands" },
   ],
