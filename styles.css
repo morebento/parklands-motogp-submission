@@ -353,6 +353,36 @@ main {
   font-family: Georgia, "Times New Roman", serif;
 }
 
+/* Step 3 — "in your own words" */
+#your-words-intro {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+#your-words-text {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.example-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+.example-list li {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 0.3rem 0 0.3rem 0.85rem;
+  border-left: 2px solid var(--color-border);
+  margin-top: 0.4rem;
+}
+.hint--nudge {
+  margin-top: 1rem;
+  background: var(--color-error-bg);
+  color: var(--color-text);
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
 /* Chips */
 .chip-group {
   border: none;

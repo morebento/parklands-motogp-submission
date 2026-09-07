@@ -3,13 +3,14 @@
  * object (spec 7.2 — nothing typed here is stored outside the tab).
  */
 (function () {
-  const STEP_COUNT = 7; // 0 = landing, 1..5 = wizard steps, 6 = send
+  const STEP_COUNT = 8; // 0 = landing, 1..6 = wizard steps, 7 = send
 
   const state = {
     step: 0,
     connectionChips: [], // array of chip ids
     connectionText: "",
     concernIds: [], // array of concern item ids (from any category)
+    personalStatement: "", // Step 3 — the submitter's own words
     askIds: [], // array of ask ids
     particulars: {
       name: "",
@@ -31,10 +32,10 @@
   }
 
   function canLeaveStep(step) {
-    if (step === 3) {
+    if (step === 4) {
       return state.askIds.length > 0;
     }
-    if (step === 4) {
+    if (step === 5) {
       return (
         state.particulars.name.trim().length > 0 &&
         state.particulars.suburb.trim().length > 0 &&
@@ -45,10 +46,10 @@
   }
 
   function stepValidationMessage(step) {
-    if (step === 3 && state.askIds.length === 0) {
+    if (step === 4 && state.askIds.length === 0) {
       return "Please choose at least one thing you're asking the Government to do.";
     }
-    if (step === 4) {
+    if (step === 5) {
       if (!state.particulars.name.trim()) return "Please enter your full name.";
       if (!state.particulars.suburb.trim()) return "Please enter your suburb.";
       if (!/^\d{4}$/.test(state.particulars.postcode.trim()))

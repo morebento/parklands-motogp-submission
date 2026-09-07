@@ -22,6 +22,21 @@ window.CONTENT = {
       "Submission on proposed MotoGP circuit redevelopment — Victoria Park/Pakapakanthi",
   },
 
+  // Step 3 — the submitter's own words (§4 step 3). This paragraph goes into
+  // the letter verbatim, positioned right after the connection paragraph.
+  yourWords: {
+    intro:
+      "This is the part that matters most. In a sentence or two, tell them something specific — a place you use, a moment, what changes for you or your family. One real detail is worth more than any number of tick-boxes.",
+    label: "Why this matters to you (optional, but this is the bit they actually read)",
+    examples: [
+      "I walk my two kids across the eastern end of the park to school every morning — those are the trees that would go.",
+      "My football club trains on the oval that closes for six weeks around the event, not just one weekend.",
+      "I was born in Adelaide in 1974 and have watched the Park Lands shrink my whole life.",
+    ],
+    nudge:
+      "You've picked several concerns — adding one specific detail of your own here will make this submission much harder to dismiss as a form letter.",
+  },
+
   // Key facts shown up front on the landing screen (§4 step 1).
   headlineFacts: [
     { stat: "Up to 400 trees", detail: "removed from the iconic Adelaide Parklands" },

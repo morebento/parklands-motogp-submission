@@ -4,10 +4,11 @@
   const STEP_LABELS = {
     1: "Your connection",
     2: "Your concerns",
-    3: "Your asks",
-    4: "Your particulars",
-    5: "Review",
-    6: "Send",
+    3: "Your words",
+    4: "Your asks",
+    5: "Your particulars",
+    6: "Review",
+    7: "Send",
   };
 
   // ---------- letter text helpers ----------
@@ -87,6 +88,34 @@
     });
   }
 
+  function updateYourWordsNudge() {
+    const nudge = document.getElementById("your-words-nudge");
+    const show = state.concernIds.length >= 3 && !state.personalStatement.trim();
+    nudge.hidden = !show;
+  }
+
+  function renderYourWords() {
+    const copy = CONTENT.yourWords;
+    document.getElementById("your-words-intro").textContent = copy.intro;
+    document.getElementById("your-words-label").textContent = copy.label;
+
+    const examples = document.getElementById("your-words-examples");
+    examples.innerHTML = "";
+    copy.examples.forEach((text) => {
+      const li = document.createElement("li");
+      li.textContent = "“" + text + "”";
+      examples.appendChild(li);
+    });
+    document.getElementById("your-words-nudge").textContent = copy.nudge;
+
+    const textarea = document.getElementById("your-words-text");
+    textarea.addEventListener("input", () => {
+      state.personalStatement = textarea.value;
+      renderPreview();
+      updateYourWordsNudge();
+    });
+  }
+
   function renderAsks() {
     const container = document.getElementById("asks-list");
     container.innerHTML = "";
@@ -100,7 +129,7 @@
       input.addEventListener("change", () => {
         toggleInArray(state.askIds, ask.id);
         renderPreview();
-        hideError("step-3-error");
+        hideError("step-4-error");
       });
 
       label.appendChild(input);
@@ -122,7 +151,7 @@
       input.addEventListener("input", () => {
         state.particulars[key] = input.value;
         renderPreview();
-        hideError("step-4-error");
+        hideError("step-5-error");
       });
     });
   }
@@ -178,13 +207,17 @@
       section.hidden = Number(section.dataset.step) !== stepNum;
     });
 
-    if (stepNum === 5) {
+    if (stepNum === 3) {
+      updateYourWordsNudge();
+    }
+
+    if (stepNum === 6) {
       document.getElementById("letter-preview").value = currentLetterText();
     }
 
     document.getElementById("btn-back").hidden = false;
     const nextBtn = document.getElementById("btn-next");
-    nextBtn.textContent = stepNum === 6 ? "Finish" : "Next";
+    nextBtn.textContent = stepNum === 7 ? "Finish" : "Next";
 
     renderProgress();
     renderPreview();
@@ -207,11 +240,11 @@
 
   function handleNext() {
     if (!canLeaveStep(state.step)) {
-      const errId = state.step === 3 ? "step-3-error" : "step-4-error";
+      const errId = state.step === 4 ? "step-4-error" : "step-5-error";
       showError(errId, stepValidationMessage(state.step));
       return;
     }
-    if (state.step === 6) {
+    if (state.step === 7) {
       finishWizard();
       return;
     }
@@ -254,6 +287,7 @@
     state.connectionChips = [];
     state.connectionText = "";
     state.concernIds = [];
+    state.personalStatement = "";
     state.askIds = [];
     state.particulars = { name: "", suburb: "", postcode: "", streetAddress: "", email: "" };
     state.aplaCc = false;
@@ -267,6 +301,8 @@
     document.querySelectorAll('#concern-categories input[type="checkbox"]').forEach((el) => (el.checked = false));
     document.querySelectorAll('#asks-list input[type="checkbox"]').forEach((el) => (el.checked = false));
     document.getElementById("connection-text").value = "";
+    document.getElementById("your-words-text").value = "";
+    document.getElementById("your-words-nudge").hidden = true;
     document.getElementById("p-name").value = "";
     document.getElementById("p-suburb").value = "";
     document.getElementById("p-postcode").value = "";
@@ -347,6 +383,7 @@
     renderFactStrip();
     renderChips();
     renderConcernCategories();
+    renderYourWords();
     renderAsks();
     bindParticulars();
     bindLetterTextarea();
