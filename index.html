@@ -54,8 +54,24 @@
           send it yourself.
         </p>
 
-        <p class="countdown-big" id="landing-countdown" aria-live="polite"></p>
-        <p class="deadline-note">Consultation closes 11:59pm, Sunday 20 September 2026 (Adelaide time).</p>
+        <div class="countdown" id="countdown">
+          <div
+            class="countdown__track"
+            id="countdown-track"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            aria-label="Time elapsed in the consultation window"
+          >
+            <div class="countdown__fill" id="countdown-fill"></div>
+            <span class="countdown__rider" id="countdown-rider" aria-hidden="true">🏍️</span>
+            <span class="countdown__goal" id="countdown-goal" aria-hidden="true">🌳</span>
+          </div>
+          <p class="countdown-big" id="landing-countdown" aria-live="polite"></p>
+          <p class="countdown__quip" id="countdown-quip"></p>
+          <p class="deadline-note">Consultation closes 11:59pm, Sunday 20 September 2026 (Adelaide time).</p>
+        </div>
 
         <ul class="fact-strip" id="fact-strip"></ul>
 

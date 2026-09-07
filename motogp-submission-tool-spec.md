@@ -168,6 +168,7 @@ Implement this as a data file (e.g. `concerns.json`) the UI renders from, so wor
 
 ### 7.6 Countdown / urgency
 - Live "X days left to have your say" counter against 11:59pm ACST/ACDT (check daylight saving — SA is on ACDT from the first Sunday in October, so the 20 September deadline falls in ACST, UTC+9:30) on Sunday 20 September 2026, computed client-side from the visitor's local clock.
+- On the landing view, a small progress graphic: a horizontal "road" with a 🏍️ that travels from the consultation open date (`meta.consultationOpenISO`, ~30 Aug 2026) toward a 🌳 at the deadline, tracking elapsed fraction of the window. Exposed as `role="progressbar"` with a live `aria-valuenow`; the text counter remains the accessible source of truth. A short racing-metaphor caption changes by how far through the window we are (copy in `content.js` under `countdown`). At/after the deadline the 🌳 becomes 🪵 and the caption reads "Chequered flag — the consultation has closed." Motion respects `prefers-reduced-motion`.
 
 ## 8. Acceptance criteria
 
