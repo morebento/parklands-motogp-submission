@@ -406,11 +406,19 @@
       renderPreview();
     });
 
-    const countdownTargets = [
-      document.getElementById("header-countdown"),
-      document.getElementById("landing-countdown"),
-    ];
-    Countdown.startCountdown(countdownTargets);
+    Countdown.startCountdown({
+      textTargets: [
+        document.getElementById("header-countdown"),
+        document.getElementById("landing-countdown"),
+      ],
+      bar: {
+        track: document.getElementById("countdown-track"),
+        fill: document.getElementById("countdown-fill"),
+        rider: document.getElementById("countdown-rider"),
+        goal: document.getElementById("countdown-goal"),
+        quip: document.getElementById("countdown-quip"),
+      },
+    });
 
     renderPreview();
   }

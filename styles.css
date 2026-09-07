@@ -132,11 +132,80 @@ main {
   color: var(--color-text-muted);
 }
 
+.countdown {
+  margin: 1.5rem 0 1.25rem;
+}
+
+.countdown__track {
+  position: relative;
+  height: 12px;
+  margin: 2rem 0 0.9rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  /* dashed "road" centre line */
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-border) 0,
+    var(--color-border) 8px,
+    transparent 8px,
+    transparent 18px
+  );
+  background-size: 100% 2px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+}
+
+.countdown__fill {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  bottom: -1px;
+  min-width: 12px;
+  background: var(--color-primary);
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.countdown__rider,
+.countdown__goal {
+  position: absolute;
+  top: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+
+.countdown__rider {
+  left: 0;
+  transform: translate(-50%, -50%) scaleX(-1); /* 🏍️ points left by default; flip to face the goal */
+  transition: left 0.6s ease;
+}
+
+.countdown__goal {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
 .countdown-big {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.15rem;
+}
+
+.countdown__quip {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 0 0 0.35rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countdown__fill,
+  .countdown__rider {
+    transition: none;
+  }
 }
 
 .deadline-note {

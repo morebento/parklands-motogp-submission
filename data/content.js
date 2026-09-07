@@ -11,6 +11,7 @@ window.CONTENT = {
     siteName: "Victoria Park MotoGP Submission Builder",
     tagline: "Write your own submission on the MotoGP circuit proposal",
     deadlineISO: "2026-09-20T23:59:00+09:30",
+    consultationOpenISO: "2026-08-30T00:00:00+09:30", // ~when the feedback window opened; used only for the progress graphic
     deadlineDisplayShort: "11:59pm, Sun 20 Sept 2026",
     deadlineDisplayLong: "11:59pm, Sunday 20 September 2026 (Adelaide time)",
     officialSurveyUrl:
@@ -20,6 +21,19 @@ window.CONTENT = {
     aplaName: "Adelaide Park Lands Association",
     subjectLine:
       "Submission on proposed MotoGP circuit redevelopment — Victoria Park/Pakapakanthi",
+  },
+
+  // Landing-page countdown graphic (§7.6). A little 🏍️ travels the track toward
+  // the 🌳 as the consultation window runs out. `quips` are shown by how far
+  // through the window we are; `untilPct` is the upper bound of each band.
+  countdown: {
+    quips: [
+      { untilPct: 25, text: "Bikes still on the warm-up lap — but the trees aren't getting any younger." },
+      { untilPct: 55, text: "Race is on. A good moment to get your submission in." },
+      { untilPct: 80, text: "Back half of the race — don't leave it to the last lap." },
+      { untilPct: 100, text: "Final laps. The bike's nearly at the tree — have your say now." },
+    ],
+    closed: "Chequered flag — the consultation has closed.",
   },
 
   // Step 3 — the submitter's own words (§4 step 3). This paragraph goes into
