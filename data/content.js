@@ -18,7 +18,7 @@ window.CONTENT = {
       "https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback",
     officialEmail: "circuitredevelopment@sa.gov.au",
     aplaCcEmail: "adelparklands@outlook.com",
-    aplaName: "Adelaide Park Lands Association",
+    aplaName: "Adelaide Parklands Association",
     subjectLine:
       "Submission on proposed MotoGP circuit redevelopment — Victoria Park/Pakapakanthi",
   },
@@ -45,7 +45,7 @@ window.CONTENT = {
     examples: [
       "I walk my two kids across the eastern end of the park to school every morning — those are the trees that would go.",
       "My football club trains on the oval that closes for six weeks around the event, not just one weekend.",
-      "I was born in Adelaide in 1974 and have watched the Park Lands shrink my whole life.",
+      "I was born in Adelaide in 1974 and have watched the Parklands shrink my whole life.",
     ],
     nudge:
       "You've picked several concerns — adding one specific detail of your own here will make this submission much harder to dismiss as a form letter.",
@@ -58,14 +58,14 @@ window.CONTENT = {
     { stat: "Permanent change", detail: "under an initial six-year contract, with no guarantee it stops there" },
   ],
 
-  // Step 1 — connection to the Park Lands (multi-select chips + free text).
+  // Step 1 — connection to the Parklands (multi-select chips + free text).
   connectionChips: [
-    { id: "resident", label: "Resident", fragment: "a resident living near the Park Lands" },
-    { id: "parent", label: "Parent", fragment: "a parent of children who use the Park Lands" },
-    { id: "sports-club", label: "Sports club member", fragment: "a member of a sports club that uses the Park Lands" },
-    { id: "regular-user", label: "Regular park user", fragment: "someone who regularly uses the Park Lands" },
+    { id: "resident", label: "Resident", fragment: "a resident living near the Parklands" },
+    { id: "parent", label: "Parent", fragment: "a parent of children who use the Parklands" },
+    { id: "sports-club", label: "Sports club member", fragment: "a member of a sports club that uses the Parklands" },
+    { id: "regular-user", label: "Regular park user", fragment: "someone who regularly uses the Parklands" },
     { id: "ratepayer", label: "Ratepayer", fragment: "an Adelaide ratepayer" },
-    { id: "visitor", label: "Visitor to Adelaide", fragment: "a visitor to Adelaide who values the Park Lands" },
+    { id: "visitor", label: "Visitor to Adelaide", fragment: "a visitor to Adelaide who values the Parklands" },
   ],
 
   // Step 2 — concerns, grouped by theme (§6.1–6.6).
@@ -76,9 +76,9 @@ window.CONTENT = {
       items: [
         {
           id: "tree-removal",
-          label: "Removing up to 400 trees from a nationally significant public park",
+          label: "Removing up to 400 trees from the nationally significant Adelaide Parklands",
           paragraph:
-            "I am concerned about the removal of up to 400 trees from Victoria Park/Pakapakanthi to build this circuit — land within the Adelaide Park Lands, a place of outstanding historical, cultural and environmental significance.",
+            "I am concerned about the removal of up to 400 trees from Victoria Park/Pakapakanthi to build this circuit — land within the Adelaide Parklands, a place of outstanding historical, cultural and environmental significance.",
         },
         {
           id: "permanent-infrastructure",
@@ -94,15 +94,15 @@ window.CONTENT = {
         },
         {
           id: "world-heritage-risk",
-          label: "Risk to the Park Lands' World Heritage bid",
+          label: "Risk to the Parklands' World Heritage bid",
           paragraph:
-            "I'm concerned this project puts at risk the long-running campaign for World Heritage listing of the Adelaide Park Lands.",
+            "I'm concerned this project puts at risk the long-running campaign for World Heritage listing of the Adelaide Parklands.",
         },
         {
           id: "public-access-loss",
           label: "Loss of public access",
           paragraph:
-            "I'm concerned about the loss or restriction of public access to Park Lands that people currently use freely.",
+            "I'm concerned about the loss or restriction of public access to Parklands that people currently use freely.",
         },
       ],
     },
@@ -114,7 +114,7 @@ window.CONTENT = {
           id: "wildlife-biodiversity",
           label: "Impact on wildlife and biodiversity",
           paragraph:
-            "I'm concerned about the impact on wildlife and biodiversity in the Park Lands, including on vulnerable species such as the Chequered Copper Butterfly.",
+            "I'm concerned about the impact on wildlife and biodiversity in the Parklands, including on vulnerable species such as the Chequered Copper Butterfly.",
         },
         {
           id: "canopy-heat",
@@ -150,7 +150,7 @@ window.CONTENT = {
           id: "community-facilities",
           label: "Disruption to sporting clubs and community facilities",
           paragraph:
-            "Access to sporting clubs and community facilities in and around the Park Lands could be disrupted for weeks at a time, not just over a single event weekend.",
+            "Access to sporting clubs and community facilities in and around the Parklands could be disrupted for weeks at a time, not just over a single event weekend.",
         },
         {
           id: "emergency-access",
@@ -240,7 +240,7 @@ window.CONTENT = {
           id: "soft-opposition",
           label: "I like MotoGP in SA, just not at this location",
           paragraph:
-            "I support the idea of bringing MotoGP to South Australia, but not at the cost of permanent construction in the Adelaide Park Lands.",
+            "I support the idea of bringing MotoGP to South Australia, but not at the cost of permanent construction in the Adelaide Parklands.",
         },
       ],
     },
@@ -278,8 +278,8 @@ window.CONTENT = {
     },
     {
       id: "rule-out-expansion",
-      label: "Rule out further motorsport expansion into the Park Lands",
-      paragraph: "rule out any further motorsport expansion into the Park Lands beyond what is currently proposed",
+      label: "Rule out further motorsport expansion into the Parklands",
+      paragraph: "rule out any further motorsport expansion into the Parklands beyond what is currently proposed",
     },
   ],
 };
