@@ -7,7 +7,7 @@
     3: "Your asks",
     4: "Your particulars",
     5: "Review",
-    6: "Send",
+    6: "Lodge",
   };
 
   // ---------- letter text helpers ----------
