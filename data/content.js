@@ -76,9 +76,9 @@ window.CONTENT = {
       items: [
         {
           id: "tree-removal",
-          label: "Removing up to 400 trees from a National Heritage-listed park",
+          label: "Removing up to 400 trees from a nationally significant public park",
           paragraph:
-            "I am concerned about the removal of up to 400 trees from Victoria Park/Pakapakanthi to build this circuit — land that is part of the National Heritage-listed Adelaide Park Lands.",
+            "I am concerned about the removal of up to 400 trees from Victoria Park/Pakapakanthi to build this circuit — land within the Adelaide Park Lands, a place of outstanding historical, cultural and environmental significance.",
         },
         {
           id: "permanent-infrastructure",
@@ -96,7 +96,7 @@ window.CONTENT = {
           id: "world-heritage-risk",
           label: "Risk to the Park Lands' World Heritage bid",
           paragraph:
-            "I'm concerned this project puts at risk Adelaide's bid for World Heritage listing of the Park Lands.",
+            "I'm concerned this project puts at risk the long-running campaign for World Heritage listing of the Adelaide Park Lands.",
         },
         {
           id: "public-access-loss",
@@ -126,7 +126,7 @@ window.CONTENT = {
           id: "offset-vs-justify",
           label: "Environmental spending elsewhere used to offset the damage",
           paragraph:
-            "I'm concerned that spending on environmental projects elsewhere is being used to offset, rather than genuinely justify, damage to a protected heritage landscape.",
+            "I'm concerned that spending on environmental projects elsewhere is being used to offset, rather than genuinely justify, damage to a landscape of major environmental and cultural significance.",
         },
       ],
     },
@@ -168,7 +168,7 @@ window.CONTENT = {
           id: "short-consultation",
           label: "Three-week consultation window is too short",
           paragraph:
-            "A three-week consultation window is not enough time to properly respond to a roughly $96 million, permanent change to National Heritage-listed land.",
+            "A three-week consultation window is not enough time to properly respond to a roughly $96 million, permanent change to public land of this significance.",
         },
         {
           id: "no-eia",
