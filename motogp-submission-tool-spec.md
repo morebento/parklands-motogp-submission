@@ -16,6 +16,7 @@ Use this section as ground truth for on-site copy. All facts below were confirme
 - Circuit grows from 3.21km to **4.13km**, 15 turns, including a 900m straight along Dequetteville Terrace and revived features from the old F1-era track (Stag Corner, Rundle Road, Brewery Bend).
 - **Construction cost: $96 million** of public money, plus a separate **$15 million "Nature Positive Package"** for tree planting, habitat and water-quality projects.
 - **Tree removal**: widely reported as "up to/nearly 400 trees" — government figures break this down as 42 significant trees felled, ~335 classed as regulated/unregulated/invasive/dead/poor health, 88 relocated, and 22 more under investigation (15 of them significant). Government says this is under 5% of the ~8,895 trees in the precinct, and commits to planting roughly 3,770–3,800 replacement trees (about 10:1) plus understorey planting.
+- **Heritage status (get this right in copy)**: the "Adelaide Park Lands and City Layout" is on the Commonwealth **National Heritage List** (since 2008) — but that listing recognises Colonel Light's 1837 town plan as an urban-design achievement, and gives only limited statutory protection (an EPBC referral is required for actions with a "significant impact" on the listed values; it does not prohibit development). The Park Lands are **not** on the **SA State Heritage Register** (a recommendation to list has sat with the Minister since 2018) and are **not** World Heritage listed (a long-running bid, not yet on Australia's Tentative List). On-site copy should therefore describe the Park Lands as **nationally significant / of outstanding historical, cultural and environmental significance** rather than leaning on "heritage-listed", which overstates the protection and points at the wrong values.
 - **Timeline**: construction starts December 2026 (after the 2026 Adelaide 500/Grand Final events); first MotoGP race November 2027; Adelaide 500 Supercars returns January 2028; Tour Down Under returns to Victoria Park from 2028.
 - **Contract**: reported as an initial six-year deal with MotoGP's promoter.
 - Additional works planned in the precinct: upgraded soccer field with lighting, new running/walking loops, a 1.2km cycling criterium loop, new basketball/tennis courts, accessible toilets, a skate park, a water jump for the Adelaide Equestrian Festival, and permanent services upgrades for the Gluttony/Garden of Unearthly Delights Fringe venues.
@@ -26,7 +27,7 @@ Use this section as ground truth for on-site copy. All facts below were confirme
   1. **Government survey**: `https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback` — has some mandatory questions near the start (the rest can be skipped), and its **final question accepts a document upload**, so a prepared submission letter/PDF can be attached there instead of typing into the form.
   2. **Direct email**: `circuitredevelopment@sa.gov.au` — a submission can simply be the body of the email, or a separate attached document.
 - The Adelaide Park Lands Association (a community group opposing the project, unaffiliated with government) separately asks people to **cc/forward a copy of whatever they submit to `adelparklands@outlook.com`** for their own records and to check the government's later claims about how the community responded. This is optional and not part of the official process.
-- Community and commentators (including APLA's own media release) have criticised the consultation itself as rushed (three weeks for irreversible, ~$100m changes to National Heritage-listed land), with no public meetings, no phone line, and no independent Environmental Impact Assessment or published Cost-Benefit Analysis to inform submitters.
+- Community and commentators (including APLA's own media release) have criticised the consultation itself as rushed (three weeks for irreversible, ~$100m changes to nationally significant public land), with no public meetings, no phone line, and no independent Environmental Impact Assessment or published Cost-Benefit Analysis to inform submitters.
 
 ### The opposition, for context
 - A "Stop the Chop" petition (organised by Adelaide City councillors Patrick Maher and Keiran Snape) collected **45,861 signatures (43,784 accepted as valid)**, well over the ~10,000 needed to trigger a parliamentary committee inquiry; it was tabled in the Legislative Council on 19 August 2026.
@@ -85,16 +86,16 @@ Lower the barrier to making a genuine, personal, well-informed submission before
 Implement this as a data file (e.g. `concerns.json`) the UI renders from, so wording can be tuned without touching layout code. Each item needs: `id`, `category`, `label` (short checkbox text), `paragraph` (the sentence(s) inserted into the letter if selected). Suggested categories and starting copy below — refine wording but keep the facts accurate to §1.
 
 ### 6.1 Trees, heritage & permanent change
-- Removal of up to 400 trees from Victoria Park/Pakapakanthi, part of the National Heritage-listed Adelaide Park Lands, for a motor racing circuit.
+- Removal of up to 400 trees from Victoria Park/Pakapakanthi, within the Adelaide Park Lands — a place of outstanding historical, cultural and environmental significance — for a motor racing circuit.
 - Permanent, irreversible construction and infrastructure being built for an event held only a few days a year, under an initial six-year contract — with no guarantee it stops there.
 - Concern that a 10:1 replanting commitment doesn't replace the shade, canopy and habitat value of mature trees for decades, and that it's being used to make permanent, irreversible destruction sound acceptable.
-- Risk to Adelaide's bid for World Heritage listing of the Park Lands.
+- Risk to the long-running campaign for World Heritage listing of the Park Lands.
 - Loss or restriction of public access to Park Lands people currently use freely.
 
 ### 6.2 Environment & wildlife
 - Impact on wildlife and biodiversity, including vulnerable species such as the Chequered Copper Butterfly.
 - Loss of tree canopy in a city already facing worsening summer heat.
-- Concern that positive environmental spending elsewhere is being used to offset, rather than justify, damage to a protected heritage landscape.
+- Concern that positive environmental spending elsewhere is being used to offset, rather than justify, damage to a landscape of major environmental and cultural significance.
 
 ### 6.3 Traffic, access & daily life
 - Road closures adding significant time to commutes, or redirecting displaced traffic through residential streets not built for it.
@@ -103,7 +104,7 @@ Implement this as a data file (e.g. `concerns.json`) the UI renders from, so wor
 - Concern about ambulance, fire and other emergency vehicle access, and access to medical appointments, during event periods.
 
 ### 6.4 Process, transparency & consultation
-- A three-week consultation window is not enough time to properly respond to a ~$96 million, permanent change to National Heritage-listed land.
+- A three-week consultation window is not enough time to properly respond to a ~$96 million, permanent change to public land of this significance.
 - No independent Environmental Impact Assessment has been published.
 - No comprehensive, independent Cost-Benefit Analysis has been published to justify the public spending involved.
 - Concerns that the consultation process itself (no public meetings, limited notice) does not give the community a genuine or meaningful say.
