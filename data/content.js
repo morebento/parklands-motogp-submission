@@ -41,7 +41,7 @@ window.CONTENT = {
   yourWords: {
     intro:
       "This is the part that matters most. In a sentence or two, tell them something specific — a place you use, a moment, what changes for you or your family. One real detail is worth more than any number of tick-boxes.",
-    label: "Why this matters to you (optional, but this is the bit they actually read)",
+    label: "Why this matters to you — this is the part they actually read",
     examples: [
       "I walk my two kids across the eastern end of the park to school every morning — those are the trees that would go.",
       "My football club trains on the oval that closes for six weeks around the event, not just one weekend.",

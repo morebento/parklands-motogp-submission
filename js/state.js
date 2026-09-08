@@ -3,7 +3,7 @@
  * object (spec 7.2 — nothing typed here is stored outside the tab).
  */
 (function () {
-  const STEP_COUNT = 8; // 0 = landing, 1..6 = wizard steps, 7 = send
+  const STEP_COUNT = 8; // 0 = landing, 1..7 = wizard steps (step 7 = send)
 
   const state = {
     step: 0,
@@ -20,7 +20,7 @@
       email: "",
     },
     aplaCc: false,
-    letterText: "", // current letter shown in Step 5 textarea
+    letterText: "", // current letter shown in the Step 6 review textarea
     letterManuallyEdited: false,
   };
 
