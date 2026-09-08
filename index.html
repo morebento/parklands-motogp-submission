@@ -214,9 +214,47 @@
           <section class="step" id="step-7" data-step="7">
             <h2>Send it</h2>
             <p class="hint">
-              This tool doesn't send anything for you. <strong>Choose one of the four options
-              below</strong> to get your submission into an official channel — this is separate
-              from the "Finish" button lower down, which just closes this tool.
+              This tool can't lodge anything for you. There are <strong>two official ways</strong>
+              to make your submission before the deadline — use whichever suits you. The
+              "Finish" button lower down just closes this tool; it doesn't send anything.
+            </p>
+
+            <div class="channels">
+              <div class="channel">
+                <h3>Option 1 — the Government's feedback survey</h3>
+                <p class="hint">
+                  Its final question accepts a document upload, so you can attach your
+                  downloaded PDF instead of retyping — or paste your copied text into a
+                  comment field.
+                </p>
+                <a
+                  class="btn btn--official"
+                  id="official-survey-link"
+                  href="https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Go to the Government's official feedback survey
+                </a>
+              </div>
+
+              <div class="channel">
+                <h3>Option 2 — email your submission</h3>
+                <p class="hint">
+                  Send it to
+                  <a href="mailto:circuitredevelopment@sa.gov.au">circuitredevelopment@sa.gov.au</a>.
+                  The Department has confirmed emailed submissions are accepted. Your
+                  submission can be the body of the email or an attached PDF / text file.
+                </p>
+                <button type="button" class="btn" data-action="open-email">Open in your email app</button>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <h3>Get your submission ready</h3>
+            <p class="hint">
+              Use these to copy or save your submission for either option above.
             </p>
 
             <label class="apla-cc">
@@ -227,13 +265,12 @@
               APLA is a community group (unaffiliated with government) that keeps its own count
               of submissions to check the Government's later claims about how the community
               responded. This is optional and not part of the official process. Tick this
-              <strong>before</strong> using "Open in your email app" below if you want APLA cc'd —
-              it has no effect on the copy/PDF/text options, since those don't include an email
+              <strong>before</strong> using "Open in your email app" if you want APLA cc'd — it
+              has no effect on the copy / PDF / text options, since those don't carry an email
               header of their own.
             </p>
 
             <div class="send-actions">
-              <button type="button" class="btn" data-action="open-email">Open in your email app</button>
               <button type="button" class="btn" data-action="copy-text">Copy submission text</button>
               <button type="button" class="btn" data-action="download-pdf">Download as PDF</button>
               <button type="button" class="btn" data-action="download-txt">Download as text file</button>
@@ -242,26 +279,6 @@
             <p class="mailto-fallback-note" id="mailto-fallback-note" hidden>
               Your submission is long, so we've copied it to your clipboard and opened a short
               email — just paste before sending.
-            </p>
-
-            <hr class="divider" />
-
-            <p>
-              <strong>Ready to lodge it?</strong> This is a separate step — this tool cannot
-              submit anything for you.
-            </p>
-            <a
-              class="btn btn--official"
-              id="official-survey-link"
-              href="https://dit.sa.gov.au/infrastructure/projects/circuit-redevelopment/design/share-feedback"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Go to the Government's official feedback survey
-            </a>
-            <p class="hint">
-              The survey's final question accepts a document upload — you can attach your
-              downloaded PDF there instead of typing into the form.
             </p>
           </section>
         </div>
@@ -319,7 +336,8 @@
     </details>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- jsPDF vendored locally (v2.5.1) so the tool makes no third-party network calls -->
+  <script src="vendor/jspdf.umd.min.js"></script>
   <script src="data/content.js"></script>
   <script src="js/state.js"></script>
   <script src="js/letter.js"></script>

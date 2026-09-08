@@ -520,7 +520,38 @@ main {
   font-weight: 600;
 }
 
-/* Step 6 send actions */
+/* Step 7 — the two official channels */
+.channels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+@media (min-width: 640px) {
+  .channels {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.channel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+.channel h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+.channel .hint {
+  flex: 1;
+}
+.channel .btn {
+  align-self: flex-start;
+}
+
+/* Step 7 send actions */
 .send-actions {
   display: flex;
   flex-wrap: wrap;
