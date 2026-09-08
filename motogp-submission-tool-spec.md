@@ -175,16 +175,18 @@ Implement this as a data file (e.g. `concerns.json`) the UI renders from, so wor
 
 ## 8. Acceptance criteria
 
-- [ ] A visitor with no prior knowledge of the issue can produce a coherent, factually accurate, first-person submission in under 5 minutes.
-- [ ] No concern or ask is pre-selected; the letter is empty of substantive content until the visitor makes choices.
-- [ ] The live preview always matches the current checkbox/field state until the visitor manually edits it in Step 6, after which manual edits are preserved and not overwritten.
-- [ ] The "in your own words" prompt (Step 3) is encouraged rather than labelled merely "optional"; skipping it never leaves an empty paragraph or placeholder in the letter; when filled it appears verbatim as its own paragraph after the connection paragraph and before the first concern heading, in the preview and all four outputs.
-- [ ] "Open in email app," "copy text," "download PDF," and "download text" all work from the same generated letter.
-- [ ] The official DIT survey link and the `circuitredevelopment@sa.gov.au` address are correct and clearly presented as the two official channels, distinct from this tool.
-- [ ] No personal data (name, address, email, selections) leaves the browser at any point; this is stated plainly on the page.
-- [ ] The countdown correctly reflects the 20 September 2026, 11:59pm (Adelaide time) deadline.
-- [ ] Page works and looks reasonable on a small mobile screen.
-- [ ] Independence disclaimer (not government, not officially affiliated with APLA) is visible without scrolling on the landing view.
+_All criteria verified against the deployed build on 8 September 2026 (main @ `416c599`), via code review, a Node harness exercising the letter / countdown / `mailto:` logic, and a mobile-width (390 px) browser walkthrough of the full landing → Step 7 flow._
+
+- [x] A visitor with no prior knowledge of the issue can produce a coherent, factually accurate, first-person submission in under 5 minutes. — walkthrough completed the full flow in a couple of minutes; concern/ask paragraphs are pre-written first-person prose aligned to §1.
+- [x] No concern or ask is pre-selected; the letter is empty of substantive content until the visitor makes choices. — checkboxes render unchecked; the empty-state letter is only salutation / subject / opening / sign-off.
+- [x] The live preview always matches the current checkbox/field state until the visitor manually edits it in Step 6, after which manual edits are preserved and not overwritten. — confirmed by editing in Step 6, navigating back to Step 2, toggling a concern, and returning: the manual edit was kept and the new concern was not injected.
+- [x] The "in your own words" prompt (Step 3) is encouraged rather than labelled merely "optional"; skipping it never leaves an empty paragraph or placeholder in the letter; when filled it appears verbatim as its own paragraph after the connection paragraph and before the first concern heading, in the preview and all four outputs. — field label carries no "optional"; the intro frames it as the part that matters most; a ≥3-concern nudge appears when blank; position confirmed in the live preview and in the shared letter-assembly function all outputs use.
+- [x] "Open in email app," "copy text," "download PDF," and "download text" all work from the same generated letter. — copy and PDF exercised in-browser with no console errors; text download uses the same Blob path; `mailto:` length-threshold fallback (copy + short placeholder email) verified in the Node harness.
+- [x] The official DIT survey link and the `circuitredevelopment@sa.gov.au` address are correct and clearly presented as the two official channels, distinct from this tool. — Step 7 now shows both as side-by-side "Option 1 / Option 2" cards with the email address visible as a `mailto:` link; DIT has confirmed emailed submissions are accepted (see closed issue #13).
+- [x] No personal data (name, address, email, selections) leaves the browser at any point; this is stated plainly on the page. — no `fetch` / `XHR` / form submission anywhere; jsPDF is now vendored locally (`vendor/jspdf.umd.min.js`), so the page makes no third-party network calls at all; stated in the landing privacy note, the email-field note, and the footer "Your privacy" panel.
+- [x] The countdown correctly reflects the 20 September 2026, 11:59pm (Adelaide time) deadline. — `deadlineISO` is `2026-09-20T23:59:00+09:30` (ACST; SA moves to ACDT on 4 Oct); harness showed "12 days, 11 hours left" at an 8 Sep test clock and "The consultation has closed." past the deadline, with the 🌳→🪵 swap and `prefers-reduced-motion` handling.
+- [x] Page works and looks reasonable on a small mobile screen. — walked end-to-end at 390 px: single column, inputs full-width, no horizontal overflow.
+- [x] Independence disclaimer (not government, not officially affiliated with APLA) is visible without scrolling on the landing view. — it is the first block in the landing panel, above the `<h1>`; fully visible at 390 px with no scrolling.
 
 ## 9. Open items for you to confirm before/while building
 
